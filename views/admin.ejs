@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+   <!-- 新增模态框（Modal） -->
+   <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    新增新闻
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                  <span class="input-group-addon">标题</span>
+                  <input type="text" class="addtitle form-control" value="新闻主要标题">
+                </div>
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon">分类</span>
+                  <input type="text" class="addcat form-control" value="nba">
+                </div>
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon">图片</span>
+                  <input type="text" class="addimg form-control" value="img/n1.png">
+                </div>
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon">内容</span>
+                  <input type="text" class="addcontent form-control" value="新闻主要内容">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-primary">
+                    提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+   </div>
+
+   <!-- 修改模态框（Modal） -->
+   <div class="modal fade" id="modModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel">
+                    修改新闻
+                </h4>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                  <span class="input-group-addon">编号</span>
+                  <input type="text" class="mid form-control" disabled="disabled">
+                </div>
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon">标题</span>
+                  <input type="text" class="mtitle form-control" placeholder="在此输入标题">
+                </div>
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon">分类</span>
+                  <input type="text" class="mcat form-control" placeholder="nba">
+                </div>
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon">图片</span>
+                  <input type="text" class="mimg form-control" placeholder="img/a1.jpeg">
+                </div>
+                <br>
+                <div class="input-group">
+                  <span class="input-group-addon">内容</span>
+                  <input type="text" class="mcontent form-control" placeholder="在此输入内容">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
+                </button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">删除
+                </button>
+                <button type="button" class="btn btn-primary">
+                    提交
+                </button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+   </div>
+
+    <!-- 头部固定导航条 -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">后台管理系统</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">操作台 <span class="sr-only">(current)</span></a></li>
+                    <li><a href="#">历史查询</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">快捷入口 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">超链接</a></li>
+                            <li><a href="#">超链接</a></li>
+                            <li><a href="#">超链接</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">超链接</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">超链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search">
+                    </div>
+                    <button type="submit" class="btn btn-default">查询</button>
+                </form>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">设定</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的资料 <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#">超链接</a></li>
+                            <li><a href="#">超链接</a></li>
+                            <li><a href="#">超链接</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">超链接</a></li>
+                            <li role="separator" class="divider"></li>
+                            <li><a href="#">超链接</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <!-- 页面主体部分 -->
+    <!-- <div class="row"> -->
+        <div class="container-fluid">
+            <!-- 左面的菜单 -->
+            <div class="col-sm-3 sidebar">
+                <div class="list-group col-sm-3 bs-docs-sidebar hidden-print hidden-xs hidden-sm affix">
+                    <button type="button" class="list-group-item">首页</button>
+                    <button type="button" class="list-group-item">待办事宜</button>
+                    <button type="button" class="list-group-item">工作安排</button>
+                    <button type="button" class="list-group-item">工作日志</button>
+                    <button type="button" class="list-group-item">
+                        <ul>
+                            <li>本月记录</li>
+                            <li>上月记录</li>
+                            <li>历史纪录</li>
+                        </ul>
+                    </button>
+                    <button type="button" class="list-group-item">即时消息</button>
+                    <button type="button" class="list-group-item">待办事宜</button>
+                    <button type="button" class="list-group-item">工作安排</button>
+                    <button type="button" class="list-group-item">工作日志</button>
+                    <button type="button" class="list-group-item">意见反馈</button>
+                    <button type="button" class="list-group-item">即时消息</button>
+                </div>
+            </div>
+            <!-- 右面的主内容 -->
+            <div class="col-sm-9 main">
+                <ol class="breadcrumb">
+                    <li><a href="#">后台管理系统</a></li>
+                    <li><a href="#">操作台</a></li>
+                    <li class="active">首页</li>
+                </ol>
+                <div class="jumbotron">
+                    <h1>欢迎来到新闻后台管理系统！</h1>
+                    <p>...</p>
+                    <p><a class="btn btn-primary btn-lg" href="#" role="button"  data-toggle="modal" data-target="#addModal">新增新闻</a></p>
+                </div>
+                
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>标题</th>
+                            <th>分类</th>
+                            <th>图片</th>
+                            <th>内容</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- 数据开始 -->
+                        <% for(var i=0; i<result.length; i++) {%>
+                            <tr class="adata">
+                                <td class="aid">
+                                    <%=result[i]['aid']%>
+                                </td>
+                                <td class="atitle">
+                                    <%=result[i]['atitle']%>
+                                </td>
+                                <td class="acat">
+                                    <%=result[i]['acat']%>
+                                </td>
+                                <td class="aimg">
+                                    <%=result[i]['aimg']%>
+                                </td>
+                                <td class="acontent">
+                                    <%=result[i]['acontent']%>
+                                </td>
+                            </tr>
+                        <% } %>
+                        <!-- 数据结束 -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    <!-- </div> -->
+
+</body>
+<script>
+    // --新增数据--
+    // 窗口内 提交按钮绑定新增
+    $('#addModal').find('.btn-primary').on('click',function(){
+        var reqdata = {
+            'title': $('#addModal').find('.addtitle').val(),
+            'cat': $('#addModal').find('.addcat').val(),
+            'img': $('#addModal').find('.addimg').val(),
+            'content': $('#addModal').find('.addcontent').val()
+        };
+
+        // var jsondata = JSON.stringify(reqdata);
+        $.get('/../insert/',reqdata,function(data){
+            console.log('modify complete!');
+            location.reload();
+        });
+    });
+    
+
+
+
+    // --更新数据--
+
+    // 修改单条数据 弹窗
+    $('.adata').on('click',function(){
+        // 读取id
+        var mid = $(this).find('.aid').text().trim();
+        $('#modModal').find('.mid').attr('value',mid);
+        // 读取标题
+        var mtitle = $(this).find('.atitle').text().trim();
+        $('#modModal').find('.mtitle').attr('value',mtitle);
+        // 读取分类
+        var mcat = $(this).find('.acat').text().trim();
+        $('#modModal').find('.mcat').attr('value',mcat);
+        // 读取图片
+        var mimg = $(this).find('.aimg').text().trim();
+        $('#modModal').find('.mimg').attr('value',mimg);
+        // 读取内容
+        var mcontent = $(this).find('.acontent').text().trim();
+        $('#modModal').find('.mcontent').attr('value',mcontent);
+        // 弹窗
+        $('#modModal').modal();
+    });
+    // 窗口内 提交按钮绑定事件
+    $('#modModal').find('.btn-primary').on('click',function(){
+        var reqdata = {
+            'id': $('#modModal').find('.mid').val(),
+            'title': $('#modModal').find('.mtitle').val(),
+            'cat': $('#modModal').find('.mcat').val(),
+            'img': $('#modModal').find('.mimg').val(),
+            'content': $('#modModal').find('.mcontent').val()
+        };
+
+        // var jsondata = JSON.stringify(reqdata);
+        $.get('/../modify/',reqdata,function(data){
+            console.log('modify complete!');
+            location.reload();
+        });
+    });
+    // 窗口内 删除按钮绑定事件
+    $('#modModal').find('.btn-danger').on('click',function(){
+        var reqdata = {
+            'id': $('#modModal').find('.mid').val()
+        };
+        $.get('/../delete/',reqdata,function(data){
+            console.log('delete complete!');
+            location.reload();
+        });
+    });
+</script>
+</html>

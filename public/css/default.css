@@ -1,0 +1,150 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+	box-sizing:border-box;
+}
+body{
+	min-width: 270px;
+	font-size: 62.5%;
+}
+ul{
+	list-style: none;
+}
+a{
+	color: #FFF;
+}
+/*头部*/
+header{
+	background: #3e98f0;
+}
+.logoline{
+	height: 48px;
+	width: 100%;
+	text-align: center;
+	border-bottom: 1px solid #5dabf0;
+}
+.icon-me{
+	display: block;
+	float: left;
+	width: 34px;
+    height: 34px;
+    background: url(../img/icon-bg.png) no-repeat;
+    background-size: 40px 500px;
+    background-position: center -461px;
+    margin-left: 10px;
+}
+.logo{
+	line-height: 48px;
+	font-size: 1.4rem;
+	color: #FFFFFF;
+	text-shadow: 1px 1px #808080;
+}
+.navigator{
+
+}
+.navigatorUl{
+	display: -webkit-flex;
+	display: flex;
+}
+.navigatorUl li{
+	font-size: .8rem;
+	color: #FFFFFF;
+	margin: 10px 0;
+	-webkit-flex:1;
+	flex:1;
+	text-align: center;
+	border-right:1px solid #5dabf0;
+}
+
+/*主体*/
+.main{
+	padding: 15px 17px;
+}
+#mainContent li{
+	display: flex;
+    display: -webkit-box;
+    -webkit-box-align: center;
+    box-align: center;
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid #eee;
+}
+#mainContent li:after{
+	display: block;
+	content: '.';
+	height: 0;
+	overflow: hidden;
+	clear: both;
+}
+
+#mainContent li img{
+	display: block;
+	width: 33%;
+	margin-right: 14px;
+}
+.liContent{
+	position: relative;
+	display: block;
+	width: 60%;
+}
+.title{
+	font-size: 1rem;
+	line-height: 2rem;
+	color: #333;
+	max-height: 4rem;
+	overflow: hidden;
+}
+.time{
+	font-size: 0.6rem;
+	color:#999;
+}
+
+/*尾部*/
+
+footer{
+	height: 44px;
+	background: #3E98F0;
+}
+footer span{
+	display: inline-block;
+	width: 33.3%;
+	height: 44px;
+	line-height: 44px;
+	text-align: center;
+	color: #fff;
+	font-size: 13px;
+	float: left;
+	position: relative;
+	cursor: pointer;
+}
+.footer-icon1{
+	background-position: 0 3px;
+	display: inline-block;
+	width: 25px;
+	height: 22px;
+	background-image: url(../img/fsbt.png);
+	background-size: 30px 300px;
+	position: relative;
+	top: 7px;
+}
+.footer-icon2{
+	background-position: 0 -31px;
+	display: inline-block;
+	width: 25px;
+	height: 22px;
+	background-image: url(../img/fsbt.png);
+	background-size: 30px 300px;
+	position: relative;
+	top: 7px;
+}
+.footer-icon3{
+	background-position: 0 -64px;
+	display: inline-block;
+	width: 25px;
+	height: 22px;
+	background-image: url(../img/fsbt.png);
+	background-size: 30px 300px;
+	position: relative;
+	top: 7px;
+}

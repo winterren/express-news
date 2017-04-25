@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding-top: 50px;
+}
+
+li{
+	list-style: none;
+}
+
+.sidebar {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.main {
+    padding: 20px;
+}

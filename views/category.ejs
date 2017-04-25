@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+	<title>MyNEWS</title>
+	<link rel="stylesheet" href="/public/css/default.css">
+</head>
+<body>
+	<!-- 头部 -->
+	<header>
+		<!-- logo那行 -->
+		<div class="logoline">
+			<a href="/admin"><i class="icon-me"></i></a>
+			<span class="logo">
+				<a href="/">MyNEWS</a>
+			</span>
+		</div>
+		<!-- 分割线 -->
+		<div class="divider"></div>
+		<!-- 导航那行 -->
+		<div class="navigator">
+			<ul class="navigatorUl">
+				<li class="btn" id="gaoxiao">
+					<a href="/cat/gaoxiao">搞笑</a>
+				</li>
+				<li class="btn" id="keji">
+					<a href="/cat/keji">科技</a>
+				</li>
+				<li class="btn" id="nvren">
+					<a href="/cat/nvren">女人</a>
+				</li>
+				<li class="btn" id="nba">
+					<a href="/cat/nba">NBA</a>
+				</li>
+				<li class="btn" id="tiyu">
+					<a href="/cat/tiyu">体育</a>
+				</li>
+			</ul>
+		</div>
+	</header>
+	<!-- 主体 -->
+	<div class="main">
+		<div class="banner"></div>
+		<!-- <div class="hot"></div> -->
+		<div class="content">
+			<ul id="mainContent">
+
+				<!-- ejs填充 -->
+				<!-- ******* -->
+				<% for(var i=0; i<result.length; i++) {%>
+					<li>
+						<img src="/public/<%=result[i]['aimg']%>" >
+						<div class="liContent">
+							<div class="title"><%=result[i]['atitle']%></div>
+							<div class="time"><%=result[i]['atime']%></div>
+						</div>
+					</li>
+				<% } %>  
+				<!-- *********** -->
+				<!-- ejs填充结束 -->
+
+			</ul>
+		</div>
+	</div>
+	<!-- 尾部 -->
+	<footer>
+		<span class="footReturn"><i class="footer-icon1"></i>意见反馈</span>
+		<span class="footPut"><b></b><i class="footer-icon2"></i>应用推荐</span>
+		<span class="footDown"><b></b><i class="footer-icon3
+			"></i>客户端</span>
+	</footer>
+</body>
+<!-- <script src="js/jquery-3.1.0.slim.min.js"></script> -->
+<script src="/public/js/jquery-2.1.4.min.js"></script>
+</html>
